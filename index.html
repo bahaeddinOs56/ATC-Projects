@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="violet">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATC PROJECTS SARL — Conseil, ingénierie & réalisation de projets</title>
+  <meta name="description" content="ATC PROJECTS SARL — Conseil, ingénierie et réalisation de projets au Maroc : marchés publics, ferroviaire, infrastructures, énergie et construction. Basés à Rabat." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css?v=20" />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="ATC PROJECTS — Accueil">
+      <img src="assets/logo-white.png" alt="" class="brand__logo brand__logo--on-dark" width="120" height="66" />
+      <img src="assets/logo.png" alt="ATC PROJECTS" class="brand__logo brand__logo--on-light" width="120" height="66" />
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#societe">Société</a>
+      <a href="#secteurs">Secteurs</a>
+      <a href="#references">Références</a>
+      <a href="#contact" class="nav__cta">Contact</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <a href="#societe">Société</a>
+    <a href="#direction">Direction</a>
+    <a href="#secteurs">Secteurs</a>
+    <a href="#methode">Méthode</a>
+    <a href="#references">Références</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero__media" aria-hidden="true">
+        <img src="assets/images/hero-towers.jpg" alt="" class="hero__img" data-field="hero.image" />
+        <div class="hero__veil"></div>
+      </div>
+      <div class="hero__content">
+        <p class="hero__brand" data-field="hero.brand">ATC PROJECTS</p>
+        <h1 class="hero__title" data-field="hero.title">L’expertise qui fait avancer vos projets au Maroc.</h1>
+        <p class="hero__lead" data-field="hero.lead">
+          Rabat · Conseil, marchés publics & réalisation — de l’opportunité à la réception.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" data-field="hero.ctaPrimary" data-attr-href="hero.ctaPrimaryHref" href="#contact">Parler d’un appel d’offres</a>
+          <a class="btn btn--ghost" data-field="hero.ctaSecondary" data-attr-href="hero.ctaSecondaryHref" href="#secteurs">Voir les secteurs</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--white" id="societe">
+      <div class="shell about">
+        <div class="about__top">
+          <div class="about__copy">
+            <span class="kicker" data-field="about.kicker">La société</span>
+            <h2 class="h2" data-field="about.title">ATC PROJECTS SARL</h2>
+            <p class="about__lead" data-field="about.lead">
+              Société marocaine de conseil, d’ingénierie, d’assistance technique et de réalisation de projets.
+            </p>
+            <p data-field="about.text">
+              Nous accompagnons les entreprises nationales et internationales dans la gestion de projets, les marchés publics et privés, les travaux, la fourniture d’équipements et la représentation au Maroc — de l’opportunité jusqu’à la clôture.
+            </p>
+          </div>
+          <figure class="about__media" data-about-gallery>
+            <div class="about__media-viewport">
+              <div class="about__media-track" data-list="about.images">
+                <div class="about__media-slide is-active">
+                  <img src="assets/images/voirie.jpg" alt="Voirie, routes & ouvrages d’art — infrastructures" width="900" height="700" loading="lazy" />
+                </div>
+                <div class="about__media-slide">
+                  <img src="assets/images/intro-infra.jpg" alt="Projet d’infrastructures" width="900" height="700" loading="lazy" />
+                </div>
+              </div>
+              <div class="about__media-ui">
+                <button type="button" class="about__media-nav about__media-nav--prev" data-about-prev aria-label="Photo précédente">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="about__media-nav about__media-nav--next" data-about-next aria-label="Photo suivante">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="about__media-footer">
+                  <div class="about__media-dots" data-about-dots></div>
+                  <p class="about__media-count" aria-live="polite">
+                    <span data-about-current>01</span><span class="about__media-count-sep">/</span><span data-about-total>02</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </figure>
+        </div>
+        <ul class="credibility" data-list="credibility.items"></ul>
+      </div>
+    </section>
+
+    <section class="band band--ink" id="mot-dg">
+      <div class="shell letter-wrap">
+        <span class="kicker kicker--mist" data-field="letter.kicker">Mot du Directeur Général</span>
+        <blockquote class="letter">
+          <p data-field="letter.quote">« La réussite d’un projet repose sur une expertise solide, une parfaite maîtrise des procédures et un accompagnement de proximité. »</p>
+          <div class="letter__body">
+            <p data-field="letter.p1">
+              Ancien Responsable des Achats Publics, j’ai souhaité mettre cette expérience au service des entreprises marocaines et étrangères qui développent leurs activités au Maroc.
+            </p>
+          </div>
+          <footer class="letter__sign">
+            <strong data-field="letter.name">M. Abdelali LAHNAOUI</strong>
+            <span data-field="letter.role">Directeur Général</span>
+          </footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="band" id="direction">
+      <div class="shell">
+        <div class="section-top">
+          <span class="kicker" data-field="direction.kicker">Direction</span>
+          <h2 class="h2" data-field="direction.title">Une direction engagée</h2>
+        </div>
+        <div class="leaders" data-list="direction.people"></div>
+      </div>
+    </section>
+
+    <section class="band band--white" id="secteurs">
+      <div class="shell">
+        <div class="carousel-head">
+          <div>
+            <span class="kicker" data-field="sectors.kicker">Secteurs d’intervention</span>
+            <h2 class="h2" data-field="sectors.title">Là où nous intervenons</h2>
+          </div>
+          <div class="carousel-controls">
+            <p class="carousel-count" aria-live="polite">
+              <span data-carousel-current>01</span><span class="carousel-count__sep">/</span><span data-carousel-total>05</span>
+            </p>
+            <button type="button" class="carousel-btn" data-carousel-prev aria-label="Secteur précédent">←</button>
+            <button type="button" class="carousel-btn" data-carousel-next aria-label="Secteur suivant">→</button>
+          </div>
+        </div>
+
+        <div
+          class="carousel"
+          data-carousel
+          role="region"
+          aria-roledescription="carrousel"
+          aria-label="Secteurs d’intervention"
+        >
+          <div class="carousel__viewport">
+            <div class="carousel__track" data-carousel-track data-list="sectors.items"></div>
+          </div>
+          <div class="carousel-dots" data-carousel-dots></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--ink" id="methode">
+      <div class="shell">
+        <div class="section-top">
+          <span class="kicker kicker--mist" data-field="prestations.kicker">Notre méthode</span>
+          <h2 class="h2 h2--light" data-field="prestations.title">Un parcours en 3 temps</h2>
+        </div>
+        <div class="phases" data-list="prestations.phases"></div>
+      </div>
+    </section>
+
+    <section class="band audience-band" id="pour-qui">
+      <div class="audience-band__media" aria-hidden="true">
+        <img data-field="audience.image" src="assets/images/conseil.jpg" alt="" />
+        <div class="audience-band__veil"></div>
+      </div>
+      <div class="shell audience-band__content">
+        <div class="section-top">
+          <span class="kicker kicker--mist" data-field="audience.kicker">Pour qui</span>
+          <h2 class="h2 h2--light" data-field="audience.title">Des clients avec un enjeu concret au Maroc</h2>
+        </div>
+        <div class="audience" data-list="audience.items"></div>
+      </div>
+    </section>
+
+    <section class="band band--white references-band" id="references">
+      <div class="shell">
+        <div class="section-top section-top--center">
+          <span class="kicker" data-field="proof.kicker">Références</span>
+          <h2 class="h2" data-field="proof.title">Ils nous font confiance</h2>
+        </div>
+      </div>
+      <div class="logo-marquee" aria-label="Logos partenaires et clients">
+        <div class="logo-marquee__viewport">
+          <div class="logo-marquee__track" data-list="proof.items"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--ink contact-band" id="contact">
+      <div class="shell contact">
+        <div>
+          <span class="kicker kicker--mist" data-field="contact.kicker">Contact</span>
+          <h2 class="h2 h2--light" data-field="contact.title">Dites-nous votre besoin</h2>
+          <p class="contact__lead" data-field="contact.lead">Choisissez le sujet — on vous répond avec le bon interlocuteur.</p>
+          <div class="contact__paths" data-list="contact.paths"></div>
+        </div>
+        <div class="contact__panel">
+          <a class="contact__big" data-field="contact.phone" href="tel:+212663400107">+212 663 40 01 07</a>
+          <div class="contact__emails" data-list="contact.emails">
+            <a class="contact__mail" href="mailto:info.atcprojects@gmail.com">info.atcprojects@gmail.com</a>
+            <a class="contact__mail" href="mailto:dir.atcprojects@gmail.com">dir.atcprojects@gmail.com</a>
+          </div>
+          <p class="contact__addr" data-field="contact.address">Imm N°5, App N°1 — Océan, Rabat, Maroc</p>
+          <div class="contact__actions">
+            <a class="btn btn--primary" data-action="call" href="tel:+212663400107">Appeler</a>
+            <a class="btn btn--ghost btn--ghost-dark" data-action="email" href="mailto:info.atcprojects@gmail.com">Envoyer un email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo-white.png" alt="ATC PROJECTS" class="footer-logo" width="100" height="55" />
+        <p>© <span id="year"></span> ATC PROJECTS SARL</p>
+      </div>
+      <nav class="footer-nav" aria-label="Liens pied de page">
+        <a href="#societe">Société</a>
+        <a href="#secteurs">Secteurs</a>
+        <a href="#references">Références</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="/js/content.js?v=15"></script>
+  <script src="/js/main.js?v=11"></script>
+</body>
+</html>

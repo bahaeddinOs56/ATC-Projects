@@ -1,0 +1,242 @@
+{
+  "theme": "violet",
+  "hero": {
+    "brand": "ATC PROJECTS",
+    "title": "L’expertise qui fait avancer vos projets au Maroc.",
+    "lead": "Rabat · Conseil, marchés publics & réalisation — de l’opportunité à la réception.",
+    "image": "assets/images/hero-towers.jpg",
+    "ctaPrimary": "Parler d’un appel d’offres",
+    "ctaPrimaryHref": "#contact",
+    "ctaSecondary": "Voir les secteurs",
+    "ctaSecondaryHref": "#secteurs",
+    "visible": true
+  },
+  "about": {
+    "kicker": "La société",
+    "title": "ATC PROJECTS SARL",
+    "lead": "Société marocaine de conseil, d’ingénierie, d’assistance technique et de réalisation de projets.",
+    "text": "Nous accompagnons les entreprises nationales et internationales dans la gestion de projets, les marchés publics et privés, les travaux, la fourniture d’équipements et la représentation au Maroc — de l’opportunité jusqu’à la clôture.",
+    "images": [
+      {
+        "image": "assets/images/voirie.jpg",
+        "alt": "Voirie, routes & ouvrages d’art — infrastructures"
+      },
+      {
+        "image": "assets/images/intro-infra.jpg",
+        "alt": "Projet d’infrastructures"
+      }
+    ],
+    "visible": true
+  },
+  "credibility": {
+    "items": [
+      {
+        "label": "Siège",
+        "value": "Rabat"
+      },
+      {
+        "label": "Cœur de métier",
+        "value": "Marchés publics & ingénierie"
+      },
+      {
+        "label": "Secteurs",
+        "value": "Ferroviaire, infra, énergie, construction"
+      },
+      {
+        "label": "Parcours",
+        "value": "De l’opportunité à la réception"
+      }
+    ],
+    "visible": true
+  },
+  "letter": {
+    "kicker": "Mot du Directeur Général",
+    "quote": "« La réussite d’un projet repose sur une expertise solide, une parfaite maîtrise des procédures et un accompagnement de proximité. »",
+    "p1": "Ancien Responsable des Achats Publics, j’ai souhaité mettre cette expérience au service des entreprises marocaines et étrangères qui développent leurs activités au Maroc.",
+    "name": "M. Abdelali LAHNAOUI",
+    "role": "Directeur Général",
+    "visible": true
+  },
+  "direction": {
+    "kicker": "Direction",
+    "title": "Une direction engagée",
+    "people": [
+      {
+        "role": "Directeur Général",
+        "name": "M. Abdelali LAHNAOUI",
+        "bio": "Marchés publics, gestion de projets et relations avec administrations et grands donneurs d’ordre.",
+        "image": "assets/images/direction-lahnaoui.png"
+      },
+      {
+        "role": "Directrice Administrative et Financière",
+        "name": "Mme Touria EL GUENUNI",
+        "bio": "Gestion administrative, financière et suivi contractuel des projets.",
+        "image": "assets/images/direction-guenuni.png"
+      }
+    ],
+    "visible": true
+  },
+  "sectors": {
+    "kicker": "Secteurs d’intervention",
+    "title": "Là où nous intervenons",
+    "items": [
+      {
+        "label": "01 — Ferroviaire",
+        "title": "Travaux & équipements ferroviaires",
+        "text": "Voies ferrées, équipements, maintenance, renouvellement et modernisation des infrastructures.",
+        "image": "assets/images/ferroviaire.jpg",
+        "alt": "Al Boraq — TGV marocain en gare de Tanger"
+      },
+      {
+        "label": "02 — Infrastructures",
+        "title": "Voirie, routes & ouvrages d’art",
+        "text": "Infrastructures routières et ouvrages d’art pour marchés publics et privés.",
+        "image": "assets/images/uploads/1787068503844-35d10204.jpg",
+        "alt": "Voirie et ouvrages d’art"
+      },
+      {
+        "label": "03 — Construction",
+        "title": "Bâtiment TCE & génie civil",
+        "text": "Construction tous corps d’état et infrastructures structurantes.",
+        "image": "assets/images/batiment.jpg",
+        "alt": "Construction de bâtiments"
+      },
+      {
+        "label": "04 — Énergie",
+        "title": "Énergie & électricité",
+        "text": "Photovoltaïque, électricité industrielle et tertiaire, éclairage public.",
+        "image": "assets/images/solaire.jpg",
+        "alt": "Énergies renouvelables"
+      },
+      {
+        "label": "05 — Industrie",
+        "title": "Industrie, transport & logistique",
+        "text": "Équipements techniques, solutions industrielles et logistique de projet.",
+        "image": "assets/images/industrie.jpg",
+        "alt": "Industrie et logistique"
+      }
+    ],
+    "visible": true
+  },
+  "prestations": {
+    "kicker": "Notre méthode",
+    "title": "Un parcours en 3 temps",
+    "phases": [
+      {
+        "tag": "Avant",
+        "title": "Identifier & préparer",
+        "items": [
+          "Opportunités d’affaires",
+          "Veille appels d’offres",
+          "Élaboration des offres",
+          "Conseil stratégique"
+        ]
+      },
+      {
+        "tag": "Pendant",
+        "title": "Passer & exécuter",
+        "items": [
+          "Passation des marchés",
+          "Suivi contractuel",
+          "Coordination acteurs",
+          "Pilotage de projet"
+        ]
+      },
+      {
+        "tag": "Après",
+        "title": "Clôturer & sécuriser",
+        "items": [
+          "Réceptions des travaux",
+          "Assistance au paiement",
+          "Clôture des projets",
+          "Suivi post-marché"
+        ]
+      }
+    ],
+    "visible": true
+  },
+  "audience": {
+    "kicker": "Pour qui",
+    "title": "Des clients avec un enjeu concret au Maroc",
+    "image": "assets/images/conseil.jpg",
+    "visible": true,
+    "items": [
+      {
+        "title": "Entreprises étrangères",
+        "text": "Entrée sur le marché marocain, représentation, dossiers et interface avec les administrations."
+      },
+      {
+        "title": "Entreprises marocaines",
+        "text": "Réponse aux appels d’offres, montage de dossiers et suivi contractuel."
+      },
+      {
+        "title": "Maîtres d’ouvrage & donneurs d’ordre",
+        "text": "AMO, OPC et pilotage de projets sur marchés publics ou privés."
+      }
+    ]
+  },
+  "proof": {
+    "kicker": "Références",
+    "title": "Ils nous font confiance",
+    "visible": true,
+    "items": [
+      {
+        "name": "Nordrail",
+        "alt": "Nordrail",
+        "image": "assets/images/logos/nordrail.svg"
+      },
+      {
+        "name": "Atlas Infra",
+        "alt": "Atlas Infra",
+        "image": "assets/images/logos/atlas-infra.svg"
+      },
+      {
+        "name": "Medenergie",
+        "alt": "Medenergie",
+        "image": "assets/images/logos/medenergie.svg"
+      },
+      {
+        "name": "Rabat Build",
+        "alt": "Rabat Build",
+        "image": "assets/images/logos/rabat-build.svg"
+      },
+      {
+        "name": "Sahara Log",
+        "alt": "Sahara Log",
+        "image": "assets/images/logos/sahara-log.svg"
+      },
+      {
+        "name": "Ocean Tech",
+        "alt": "Ocean Tech",
+        "image": "assets/images/logos/ocean-tech.svg"
+      }
+    ]
+  },
+  "contact": {
+    "kicker": "Contact",
+    "title": "Dites-nous votre besoin",
+    "lead": "Choisissez le sujet — on vous répond avec le bon interlocuteur.",
+    "phone": "+212 663 40 01 07",
+    "phoneHref": "tel:+212663400107",
+    "emails": [
+      "info.atcprojects@gmail.com",
+      "dir.atcprojects@gmail.com"
+    ],
+    "address": "Imm N°5, App N°1 — Océan, Rabat, Maroc",
+    "paths": [
+      {
+        "label": "Appel d’offres",
+        "href": "mailto:info.atcprojects@gmail.com?subject=Appel%20d%27offres"
+      },
+      {
+        "label": "Représentation",
+        "href": "mailto:info.atcprojects@gmail.com?subject=Representation"
+      },
+      {
+        "label": "Travaux / AMO",
+        "href": "mailto:info.atcprojects@gmail.com?subject=Travaux%20%2F%20AMO"
+      }
+    ],
+    "visible": true
+  }
+}
