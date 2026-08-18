@@ -265,19 +265,22 @@
         } else {
           const slide = (item) => `
           <div class="logo-marquee__item">
-            <img src="${escapeAttr(mediaUrl(item.image))}" alt="${escapeAttr(item.alt || item.name || "")}" loading="lazy" decoding="async" />
+            <img src="${escapeAttr(mediaUrl(item.image))}" alt="${escapeAttr(item.alt || item.name || "")}" loading="eager" decoding="async" draggable="false" />
           </div>`;
+          const row = logos.map(slide).join("");
           const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
           if (reduceMotion) {
-            list.innerHTML = logos.map(slide).join("");
+            list.innerHTML = `<div class="logo-marquee__set">${row}</div>`;
+            list.classList.add("is-static");
           } else {
-            /* 3 copies so the loop never looks stuck on narrow screens */
-            const row = logos.map(slide).join("");
-            list.innerHTML = `${row}${row}${row}`;
+            list.innerHTML = `
+              <div class="logo-marquee__set">${row}</div>
+              <div class="logo-marquee__set" aria-hidden="true">${row}</div>`;
+            list.classList.remove("is-static");
           }
-          list.classList.add("is-ready");
         }
       }
+      if (typeof window.refreshLogoMarquee === "function") window.refreshLogoMarquee();
     }
 
     if (contact) {

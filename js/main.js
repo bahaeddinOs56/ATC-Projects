@@ -307,11 +307,72 @@
 
   window.refreshPhases = initPhases;
 
+  let logoMarqueeRaf = 0;
+  let logoMarqueeOnResize = null;
+
+  const initLogoMarquee = () => {
+    const track = document.querySelector("[data-list='proof.items']");
+    const viewport = document.querySelector(".logo-marquee__viewport");
+    if (logoMarqueeRaf) {
+      cancelAnimationFrame(logoMarqueeRaf);
+      logoMarqueeRaf = 0;
+    }
+    if (logoMarqueeOnResize) {
+      window.removeEventListener("resize", logoMarqueeOnResize);
+      logoMarqueeOnResize = null;
+    }
+    if (!track || !viewport || track.classList.contains("is-static")) {
+      if (track) track.style.transform = "";
+      return;
+    }
+
+    const sets = [...track.querySelectorAll(".logo-marquee__set")];
+    if (sets.length < 2) return;
+
+    const gapOf = () => parseFloat(getComputedStyle(track).gap) || 40;
+
+    /* keep duplicating logo rows until one set is wider than the viewport */
+    let guard = 0;
+    while (sets[0].scrollWidth < viewport.clientWidth + 40 && guard < 8) {
+      const html = sets[0].innerHTML;
+      sets.forEach((set) => {
+        set.innerHTML += html;
+      });
+      guard += 1;
+    }
+
+    let setWidth = sets[0].scrollWidth + gapOf();
+    let offset = 0;
+    const speed = 42;
+    let last = performance.now();
+
+    const tick = (now) => {
+      const dt = Math.min(64, now - last);
+      last = now;
+      offset += (speed * dt) / 1000;
+      if (setWidth > 0 && offset >= setWidth) offset -= setWidth;
+      track.style.transform = `translate3d(${-offset}px, 0, 0)`;
+      logoMarqueeRaf = requestAnimationFrame(tick);
+    };
+
+    logoMarqueeOnResize = () => {
+      setWidth = sets[0].scrollWidth + gapOf();
+      if (offset >= setWidth) offset = 0;
+    };
+    window.addEventListener("resize", logoMarqueeOnResize, { passive: true });
+
+    track.style.transform = "translate3d(0,0,0)";
+    logoMarqueeRaf = requestAnimationFrame(tick);
+  };
+
+  window.refreshLogoMarquee = initLogoMarquee;
+
   const boot = async () => {
     if (window.loadSiteContent) await window.loadSiteContent();
     initCarousel();
     initAboutGallery();
     initPhases();
+    initLogoMarquee();
     syncActiveNav();
   };
 
