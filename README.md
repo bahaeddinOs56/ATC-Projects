@@ -1,8 +1,8 @@
 # ATC PROJECTS SARL
 
-Site + admin backoffice (Express).
+Site + admin backoffice (Express locally / on a VPS).
 
-## Local
+## Local (full admin)
 
 ```bash
 npm install
@@ -12,12 +12,14 @@ npm start
 - Site: http://localhost:5173  
 - Admin: http://localhost:5173/admins  
 
-## Free host (Render)
+## Netlify (site only)
 
-1. Push this repo to GitHub (private OK).
-2. Go to https://dashboard.render.com → **New** → **Blueprint** (or Web Service) → connect the repo.
-3. Free plan · Build `npm install` · Start `npm start`.
-4. Set env vars: `ADMIN_PASSWORD`, `SESSION_SECRET` (Render can auto-generate).
-5. After deploy: `https://YOUR-APP.onrender.com` and `/admins`.
+Static deploy — public site works. Admin cannot save (no server disk).
 
-**Limits of free Render:** app sleeps after ~15 min idle (first load ~30–60s). Disk is ephemeral — admin edits/uploads can reset on redeploy; keep important logos/content in the repo when possible.
+Connect the GitHub repo in Netlify, or:
+
+```bash
+npx netlify deploy --prod
+```
+
+Content is served from `data/content.json`. To update the live site: edit content locally → commit → push (or redeploy).
