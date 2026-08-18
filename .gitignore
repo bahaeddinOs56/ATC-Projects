@@ -2,5 +2,6 @@ node_modules/
 .env
 .DS_Store
 Thumbs.db
+dist/
 assets/images/uploads/*
 !assets/images/uploads/.gitkeep
