@@ -283,10 +283,35 @@
 
   window.refreshAboutGallery = initAboutGallery;
 
+  const initPhases = () => {
+    const root = document.querySelector("[data-list='prestations.phases']");
+    if (!root) return;
+    const items = [...root.querySelectorAll("[data-phase]")];
+    items.forEach((phase) => {
+      const head = phase.querySelector(".phase__head");
+      if (!head) return;
+      head.onclick = () => {
+        const open = phase.classList.contains("is-open");
+        items.forEach((other) => {
+          other.classList.remove("is-open");
+          const btn = other.querySelector(".phase__head");
+          if (btn) btn.setAttribute("aria-expanded", "false");
+        });
+        if (!open) {
+          phase.classList.add("is-open");
+          head.setAttribute("aria-expanded", "true");
+        }
+      };
+    });
+  };
+
+  window.refreshPhases = initPhases;
+
   const boot = async () => {
     if (window.loadSiteContent) await window.loadSiteContent();
     initCarousel();
     initAboutGallery();
+    initPhases();
     syncActiveNav();
   };
 

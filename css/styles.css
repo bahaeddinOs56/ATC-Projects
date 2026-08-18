@@ -640,11 +640,23 @@ h1, h2, h3, p, ul, ol, blockquote, figure {
   gap: clamp(2.5rem, 6vw, 4.5rem);
   width: max-content;
   padding: 0.35rem 0 0.85rem;
-  animation: logo-marquee 32s linear infinite;
+  animation: logo-marquee 28s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
-.logo-marquee__track:hover {
-  animation-play-state: paused;
+@media (hover: hover) and (pointer: fine) {
+  .logo-marquee__track:hover {
+    animation-play-state: paused;
+  }
+}
+
+@media (hover: none) {
+  .logo-marquee__track,
+  .logo-marquee__track:hover,
+  .logo-marquee__track:active {
+    animation-play-state: running !important;
+  }
 }
 
 .logo-marquee__item {
@@ -674,10 +686,11 @@ h1, h2, h3, p, ul, ol, blockquote, figure {
 
 @keyframes logo-marquee {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translateX(-50%);
+    /* 3 identical copies in the track */
+    transform: translate3d(-33.333%, 0, 0);
   }
 }
 
@@ -1211,7 +1224,7 @@ h1, h2, h3, p, ul, ol, blockquote, figure {
   }
 }
 
-/* Phases — Nos prestations */
+/* Phases — Notre méthode (accordion pillars) */
 .phases {
   display: grid;
   gap: 0;
@@ -1219,12 +1232,30 @@ h1, h2, h3, p, ul, ol, blockquote, figure {
 }
 
 .phase {
-  padding: 1.55rem 0 1.6rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
 }
 
+.phase__head {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "step chevron"
+    "title chevron";
+  gap: 0.35rem 1rem;
+  align-items: center;
+  padding: 1.15rem 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
 .phase__step {
-  margin: 0 0 0.65rem;
+  grid-area: step;
+  margin: 0;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -1237,36 +1268,76 @@ h1, h2, h3, p, ul, ol, blockquote, figure {
   margin-right: 0.35rem;
 }
 
-.phase h3 {
+.phase__head h3 {
+  grid-area: title;
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 3vw, 1.45rem);
+  font-size: clamp(1.15rem, 2.8vw, 1.4rem);
   font-weight: 750;
   letter-spacing: -0.03em;
-  margin: 0 0 0.95rem;
+  margin: 0;
   color: #fff;
 }
 
-.phase ul {
+.phase__chevron {
+  grid-area: chevron;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-right: 2px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+  transform: rotate(45deg);
+  transition: transform 0.35s var(--ease);
+  align-self: center;
+}
+
+.phase.is-open .phase__chevron {
+  transform: rotate(225deg);
+}
+
+.phase__body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s var(--ease);
+}
+
+.phase__body-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.phase__body ul {
   list-style: none;
-  padding: 0;
+  padding: 0 0 1.15rem;
   margin: 0;
   display: grid;
   gap: 0.5rem;
   color: #fff;
 }
 
-.phase li {
+.phase__body li {
   position: relative;
-  padding-left: 0;
   font-size: 0.96rem;
   line-height: 1.45;
   padding-top: 0.35rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.phase li:first-child {
+.phase__body li:first-child {
   border-top: 0;
   padding-top: 0;
+}
+
+.phase.is-open .phase__body {
+  grid-template-rows: 1fr;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .phase:hover .phase__body {
+    grid-template-rows: 1fr;
+  }
+
+  .phase:hover .phase__chevron {
+    transform: rotate(225deg);
+  }
 }
 
 /* Mission */
@@ -1533,14 +1604,18 @@ button:focus-visible {
 
   .phases {
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 2rem;
+    column-gap: 1.5rem;
     border-top: 0;
+    align-items: start;
   }
 
   .phase {
     border-bottom: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.16);
-    padding-top: 1.35rem;
+  }
+
+  .phase__head {
+    padding-top: 1.25rem;
   }
 
   .carousel__slide {

@@ -214,14 +214,22 @@
         phases.innerHTML = prestations.phases
           .map(
             (phase, i) => `
-          <article class="phase">
-            <p class="phase__step"><span>${String(i + 1).padStart(2, "0")}</span> ${escapeHtml(phase.tag)}</p>
-            <h3>${escapeHtml(phase.title)}</h3>
-            <ul>${(phase.items || []).map((li) => `<li>${escapeHtml(li)}</li>`).join("")}</ul>
+          <article class="phase" data-phase>
+            <button type="button" class="phase__head" aria-expanded="false">
+              <p class="phase__step"><span>${String(i + 1).padStart(2, "0")}</span> ${escapeHtml(phase.tag)}</p>
+              <h3>${escapeHtml(phase.title)}</h3>
+              <span class="phase__chevron" aria-hidden="true"></span>
+            </button>
+            <div class="phase__body">
+              <div class="phase__body-inner">
+                <ul>${(phase.items || []).map((li) => `<li>${escapeHtml(li)}</li>`).join("")}</ul>
+              </div>
+            </div>
           </article>`
           )
           .join("");
       }
+      if (typeof window.refreshPhases === "function") window.refreshPhases();
     }
 
     if (audience) {
@@ -257,12 +265,17 @@
         } else {
           const slide = (item) => `
           <div class="logo-marquee__item">
-            <img src="${escapeAttr(mediaUrl(item.image))}" alt="${escapeAttr(item.alt || item.name || "")}" loading="lazy" />
+            <img src="${escapeAttr(mediaUrl(item.image))}" alt="${escapeAttr(item.alt || item.name || "")}" loading="lazy" decoding="async" />
           </div>`;
           const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-          list.innerHTML = reduceMotion
-            ? logos.map(slide).join("")
-            : `${logos.map(slide).join("")}${logos.map(slide).join("")}`;
+          if (reduceMotion) {
+            list.innerHTML = logos.map(slide).join("");
+          } else {
+            /* 3 copies so the loop never looks stuck on narrow screens */
+            const row = logos.map(slide).join("");
+            list.innerHTML = `${row}${row}${row}`;
+          }
+          list.classList.add("is-ready");
         }
       }
     }
