@@ -9,6 +9,6 @@ services:
       - key: NODE_ENV
         value: production
       - key: ADMIN_PASSWORD
-        generateValue: true
+        sync: false
       - key: SESSION_SECRET
         generateValue: true
