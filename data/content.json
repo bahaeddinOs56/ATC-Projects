@@ -3,7 +3,7 @@
   "hero": {
     "brand": "ATC PROJECTS",
     "title": "L’expertise qui fait avancer vos projets au Maroc.",
-    "lead": "Rabat · Conseil, marchés publics & réalisation — de l’opportunité à la réception.",
+    "lead": "Conseil, marchés publics & réalisation — de l’opportunité à la réception.",
     "image": "assets/images/hero-towers.jpg",
     "ctaPrimary": "Parler d’un appel d’offres",
     "ctaPrimaryHref": "#contact",
@@ -29,25 +29,8 @@
     "visible": true
   },
   "credibility": {
-    "items": [
-      {
-        "label": "Siège",
-        "value": "Rabat"
-      },
-      {
-        "label": "Cœur de métier",
-        "value": "Marchés publics & ingénierie"
-      },
-      {
-        "label": "Secteurs",
-        "value": "Ferroviaire, infra, énergie, construction"
-      },
-      {
-        "label": "Parcours",
-        "value": "De l’opportunité à la réception"
-      }
-    ],
-    "visible": true
+    "items": [],
+    "visible": false
   },
   "letter": {
     "kicker": "Mot du Directeur Général",
