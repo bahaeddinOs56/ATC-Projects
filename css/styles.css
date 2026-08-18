@@ -105,6 +105,10 @@ body {
   overflow-x: hidden;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -390,6 +394,10 @@ h1, h2, h3, p, ul, ol, blockquote, figure {
   padding: clamp(3.25rem, 7vw, 5.5rem) 0;
 }
 
+#societe.band {
+  padding: clamp(2.5rem, 5vw, 3.75rem) 0;
+}
+
 .band--white {
   background: var(--white);
 }
@@ -452,6 +460,10 @@ h1, h2, h3, p, ul, ol, blockquote, figure {
 /* About */
 .about {
   display: grid;
+  gap: 0;
+}
+
+.about:has(.credibility:not([hidden]):not(:empty)) {
   gap: 2rem;
 }
 
@@ -484,6 +496,12 @@ h1, h2, h3, p, ul, ol, blockquote, figure {
   display: grid;
   gap: 0;
   border-top: 1px solid var(--line);
+}
+
+.credibility:empty {
+  display: none;
+  padding: 0;
+  border: 0;
 }
 
 .credibility li {
