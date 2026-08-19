@@ -164,34 +164,24 @@
     "visible": true,
     "items": [
       {
-        "name": "Nordrail",
-        "alt": "Nordrail",
-        "image": "assets/images/logos/nordrail.svg"
+        "name": "ONDA",
+        "alt": "Office National Des Aéroports",
+        "image": "assets/images/logos/onda.png"
       },
       {
-        "name": "Atlas Infra",
-        "alt": "Atlas Infra",
-        "image": "assets/images/logos/atlas-infra.svg"
+        "name": "ONCF",
+        "alt": "ONCF",
+        "image": "assets/images/logos/oncf.png"
       },
       {
-        "name": "Medenergie",
-        "alt": "Medenergie",
-        "image": "assets/images/logos/medenergie.svg"
+        "name": "Bank Al-Maghrib",
+        "alt": "Bank Al-Maghrib",
+        "image": "assets/images/logos/bank-al-maghrib.png"
       },
       {
-        "name": "Rabat Build",
-        "alt": "Rabat Build",
-        "image": "assets/images/logos/rabat-build.svg"
-      },
-      {
-        "name": "Sahara Log",
-        "alt": "Sahara Log",
-        "image": "assets/images/logos/sahara-log.svg"
-      },
-      {
-        "name": "Ocean Tech",
-        "alt": "Ocean Tech",
-        "image": "assets/images/logos/ocean-tech.svg"
+        "name": "Marsa Maroc",
+        "alt": "Marsa Maroc",
+        "image": "assets/images/logos/marsa-maroc.png"
       }
     ]
   },

@@ -668,20 +668,20 @@ h1, h2, h3, p, ul, ol, blockquote, figure {
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  height: 3.25rem;
-  min-width: 7.5rem;
+  height: 3.75rem;
+  min-width: 8.5rem;
   pointer-events: none;
 }
 
 .logo-marquee__item img {
   display: block;
-  max-height: 2.75rem;
-  max-width: 9.5rem;
+  max-height: 3.1rem;
+  max-width: 10.5rem;
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(1) contrast(1.05);
-  opacity: 0.72;
+  filter: none;
+  opacity: 0.92;
   -webkit-user-drag: none;
   user-select: none;
 }
