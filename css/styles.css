@@ -351,6 +351,7 @@ h1, h2, h3, p, ul, ol, blockquote, figure {
   color: #fff;
   margin-bottom: 1.5rem;
   font-size: 0.98rem;
+  line-height: 1.45;
 }
 
 .hero__actions {
@@ -1432,11 +1433,14 @@ h1, h2, h3, p, ul, ol, blockquote, figure {
   letter-spacing: -0.04em;
   line-height: 1.05;
   word-break: break-word;
+  margin: 0;
 }
 
-.contact__big:hover {
-  color: #fff;
-  opacity: 0.9;
+.contact__phone-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.35rem;
 }
 
 .contact__emails {
@@ -1565,6 +1569,10 @@ button:focus-visible {
   .contact__actions {
     flex-direction: row;
   }
+
+  .contact__phone-actions {
+    flex-direction: row;
+  }
 }
 
 @media (min-width: 760px) {
@@ -1644,6 +1652,15 @@ button:focus-visible {
   }
 
   .contact__actions .btn {
+    width: auto;
+  }
+
+  .contact__phone-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .contact__phone-actions .btn {
     width: auto;
   }
 }

@@ -6,6 +6,12 @@
     if (el && value != null) el.textContent = value;
   };
 
+  const setMultilineText = (sel, value) => {
+    const el = document.querySelector(sel);
+    if (!el || value == null) return;
+    el.innerHTML = escapeHtml(String(value)).replace(/\n/g, "<br />");
+  };
+
   const setAttr = (sel, attr, value) => {
     const el = document.querySelector(sel);
     if (el && value != null) el.setAttribute(attr, value);
@@ -105,7 +111,7 @@
     if (hero) {
       setText("[data-field='hero.brand']", hero.brand);
       setText("[data-field='hero.title']", hero.title);
-      setText("[data-field='hero.lead']", hero.lead);
+      setMultilineText("[data-field='hero.lead']", hero.lead);
       setSrc("[data-field='hero.image']", hero.image);
       setText("[data-field='hero.ctaPrimary']", hero.ctaPrimary);
       setAttr("[data-field='hero.ctaPrimary']", "href", hero.ctaPrimaryHref || "#contact");
@@ -286,14 +292,15 @@
     if (contact) {
       const phone = contact.phone || "";
       const tel = contact.phoneHref || (phone ? `tel:${String(phone).replace(/\s/g, "")}` : "");
+      const whatsapp =
+        contact.whatsappHref ||
+        (phone ? `https://wa.me/${String(phone).replace(/\D/g, "")}` : "");
       setText("[data-field='contact.kicker']", contact.kicker);
       setText("[data-field='contact.title']", contact.title);
       setText("[data-field='contact.lead']", contact.lead);
       setText("[data-field='contact.phone']", phone);
-      if (tel) {
-        setAttr("[data-field='contact.phone']", "href", tel);
-        setAttr("[data-action='call']", "href", tel);
-      }
+      if (tel) setAttr("[data-action='call']", "href", tel);
+      if (whatsapp) setAttr("[data-action='whatsapp']", "href", whatsapp);
       setText("[data-field='contact.address']", contact.address);
 
       const emailsWrap = document.querySelector("[data-list='contact.emails']");

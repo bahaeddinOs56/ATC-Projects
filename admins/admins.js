@@ -358,6 +358,7 @@
         <div class="admins-row">${field("Sur-titre", "contact.kicker")}${field("Titre", "contact.title")}</div>
         ${field("Sous-texte", "contact.lead", true)}
         <div class="admins-row">${field("Téléphone", "contact.phone")}${field("Lien tel:", "contact.phoneHref")}</div>
+        ${field("Lien WhatsApp", "contact.whatsappHref")}
         ${field("Emails (un par ligne)", "contact.emails", true)}
         ${field("Adresse", "contact.address", true)}
       </div>

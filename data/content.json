@@ -3,7 +3,7 @@
   "hero": {
     "brand": "ATC PROJECTS",
     "title": "L’expertise qui fait avancer vos projets au Maroc.",
-    "lead": "Conseil, marchés publics & réalisation — de l’opportunité à la réception.",
+    "lead": "Conseil, marchés publics & réalisation —\nde l’opportunité à la réception.",
     "image": "assets/images/hero-towers.jpg",
     "ctaPrimary": "Parler d’un appel d’offres",
     "ctaPrimaryHref": "#contact",
@@ -191,6 +191,7 @@
     "lead": "Choisissez le sujet — on vous répond avec le bon interlocuteur.",
     "phone": "+212 663 40 01 07",
     "phoneHref": "tel:+212663400107",
+    "whatsappHref": "https://wa.me/212663400107",
     "emails": [
       "info.atcprojects@gmail.com",
       "dir.atcprojects@gmail.com"

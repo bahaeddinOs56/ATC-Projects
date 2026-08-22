@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css?v=25" />
+  <link rel="stylesheet" href="/css/styles.css?v=26" />
   <link rel="icon" href="assets/favicon.png" type="image/png" />
 </head>
 <body>
@@ -47,7 +47,8 @@
         <p class="hero__brand" data-field="hero.brand">ATC PROJECTS</p>
         <h1 class="hero__title" data-field="hero.title">L’expertise qui fait avancer vos projets au Maroc.</h1>
         <p class="hero__lead" data-field="hero.lead">
-          Conseil, marchés publics & réalisation — de l’opportunité à la réception.
+          Conseil, marchés publics & réalisation —<br />
+          de l’opportunité à la réception.
         </p>
         <div class="hero__actions">
           <a class="btn btn--primary" data-field="hero.ctaPrimary" data-attr-href="hero.ctaPrimaryHref" href="#contact">Parler d’un appel d’offres</a>
@@ -206,14 +207,17 @@
           <div class="contact__paths" data-list="contact.paths"></div>
         </div>
         <div class="contact__panel">
-          <a class="contact__big" data-field="contact.phone" href="tel:+212663400107">+212 663 40 01 07</a>
+          <p class="contact__big" data-field="contact.phone">+212 663 40 01 07</p>
+          <div class="contact__phone-actions">
+            <a class="btn btn--primary" data-action="call" href="tel:+212663400107">Appeler</a>
+            <a class="btn btn--ghost btn--ghost-dark" data-action="whatsapp" href="https://wa.me/212663400107" target="_blank" rel="noopener noreferrer">Message WhatsApp</a>
+          </div>
           <div class="contact__emails" data-list="contact.emails">
             <a class="contact__mail" href="mailto:info.atcprojects@gmail.com">info.atcprojects@gmail.com</a>
             <a class="contact__mail" href="mailto:dir.atcprojects@gmail.com">dir.atcprojects@gmail.com</a>
           </div>
           <p class="contact__addr" data-field="contact.address">Imm N°5, App N°1 — Océan, Rabat, Maroc</p>
           <div class="contact__actions">
-            <a class="btn btn--primary" data-action="call" href="tel:+212663400107">Appeler</a>
             <a class="btn btn--ghost btn--ghost-dark" data-action="email" href="mailto:info.atcprojects@gmail.com">Envoyer un email</a>
           </div>
         </div>
@@ -236,7 +240,7 @@
     </div>
   </footer>
 
-  <script src="/js/content.js?v=17"></script>
+  <script src="/js/content.js?v=18"></script>
   <script src="/js/main.js?v=13"></script>
 </body>
 </html>
