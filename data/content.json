@@ -54,7 +54,7 @@
         "role": "Directrice Administrative et Financière",
         "name": "Mme Touria EL GUENUNI",
         "bio": "Gestion administrative, financière et suivi contractuel des projets.",
-        "image": "assets/images/direction-guenuni.png"
+        "image": "assets/images/direction-guenuni-studio.jpg"
       }
     ],
     "visible": true
@@ -74,15 +74,15 @@
         "label": "02 — Infrastructures",
         "title": "Voirie, routes & ouvrages d’art",
         "text": "Infrastructures routières et ouvrages d’art pour marchés publics et privés.",
-        "image": "assets/images/intro-infra.jpg",
-        "alt": "Voirie et ouvrages d’art"
+        "image": "assets/images/intro-infra-road.jpg",
+        "alt": "Compactage d’une voirie en enrobé"
       },
       {
         "label": "03 — Construction",
         "title": "Bâtiment TCE & génie civil",
         "text": "Construction tous corps d’état et infrastructures structurantes.",
-        "image": "assets/images/batiment.jpg",
-        "alt": "Construction de bâtiments"
+        "image": "assets/images/batiment-chantier.jpg",
+        "alt": "Chantier de bâtiments et grues à tour"
       },
       {
         "label": "04 — Énergie",
