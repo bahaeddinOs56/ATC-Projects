@@ -320,6 +320,7 @@ h1, h2, h3, p, ul, ol, blockquote, figure {
 
 .hero__video {
   z-index: 1;
+  filter: brightness(0.7) saturate(0.8) contrast(1.08);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -331,9 +332,11 @@ h1, h2, h3, p, ul, ol, blockquote, figure {
 .hero__veil {
   position: absolute;
   inset: 0;
+  z-index: 2;
   background:
-    linear-gradient(180deg, rgba(17, 17, 20, 0.4) 0%, rgba(17, 17, 20, 0.2) 40%, rgba(17, 17, 20, 0.88) 100%),
-    linear-gradient(90deg, rgba(var(--accent-rgb), 0.22) 0%, transparent 55%);
+    linear-gradient(180deg, rgba(17, 17, 20, 0.62) 0%, rgba(17, 17, 20, 0.38) 38%, rgba(17, 17, 20, 0.94) 100%),
+    linear-gradient(90deg, rgba(var(--accent-rgb), 0.42) 0%, rgba(var(--accent-rgb), 0.16) 48%, transparent 72%),
+    linear-gradient(0deg, rgba(26, 26, 31, 0.35), rgba(26, 26, 31, 0.35));
 }
 
 .hero__content {
