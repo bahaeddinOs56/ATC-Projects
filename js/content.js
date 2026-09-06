@@ -36,6 +36,27 @@
     el.src = mediaUrl(value);
   };
 
+  const initHeroVideo = () => {
+    const video = document.querySelector(".hero__video");
+    if (!video) return;
+
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced || !video.getAttribute("src")) {
+      video.pause();
+      video.removeAttribute("autoplay");
+      return;
+    }
+
+    const play = () => {
+      video.play().catch(() => {});
+    };
+
+    if (video.readyState >= 2) play();
+    else video.addEventListener("loadeddata", play, { once: true });
+  };
+
+  window.initHeroVideo = initHeroVideo;
+
   function escapeHtml(str) {
     return String(str ?? "")
       .replace(/&/g, "&amp;")
@@ -113,10 +134,22 @@
       setText("[data-field='hero.title']", hero.title);
       setMultilineText("[data-field='hero.lead']", hero.lead);
       setSrc("[data-field='hero.image']", hero.image);
+      const heroVideo = document.querySelector("[data-field='hero.video']");
+      if (heroVideo) {
+        if (hero.video) {
+          heroVideo.src = mediaUrl(hero.video);
+          heroVideo.hidden = false;
+        } else {
+          heroVideo.removeAttribute("src");
+          heroVideo.hidden = true;
+        }
+        if (hero.image) heroVideo.setAttribute("poster", mediaUrl(hero.image));
+      }
       setText("[data-field='hero.ctaPrimary']", hero.ctaPrimary);
       setAttr("[data-field='hero.ctaPrimary']", "href", hero.ctaPrimaryHref || "#contact");
       setText("[data-field='hero.ctaSecondary']", hero.ctaSecondary);
       setAttr("[data-field='hero.ctaSecondary']", "href", hero.ctaSecondaryHref || "#secteurs");
+      initHeroVideo();
     }
 
     if (about) {

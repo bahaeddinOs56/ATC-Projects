@@ -252,7 +252,8 @@
         ${visibilityToggle("hero")}
         <div class="admins-row">${field("Marque", "hero.brand")}${field("Titre", "hero.title")}</div>
         ${field("Sous-texte", "hero.lead", true)}
-        ${imageField("Image de fond", "hero.image")}
+        ${field("Vidéo de fond (URL ou .mp4)", "hero.video")}
+        ${imageField("Image poster (fallback)", "hero.image")}
         <div class="admins-row">${field("CTA principal", "hero.ctaPrimary")}${field("Lien CTA principal", "hero.ctaPrimaryHref")}</div>
         <div class="admins-row">${field("CTA secondaire", "hero.ctaSecondary")}${field("Lien CTA secondaire", "hero.ctaSecondaryHref")}</div>
       </div>`,

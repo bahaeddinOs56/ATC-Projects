@@ -6,6 +6,10 @@
 
   if (year) year.textContent = String(new Date().getFullYear());
 
+  if (typeof window.initHeroVideo === "function") {
+    window.initHeroVideo();
+  }
+
   const setHeaderHeight = () => {
     if (!header) return;
     const h = Math.ceil(header.getBoundingClientRect().height);
