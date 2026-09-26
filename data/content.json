@@ -186,6 +186,36 @@
       }
     ]
   },
+  "news": {
+    "kicker": "Actualités",
+    "title": "Ce qui anime ATC PROJECTS",
+    "lead": "Événements, rencontres et présence terrain.",
+    "visible": true,
+    "items": [
+      {
+        "date": "25 septembre 2026",
+        "dateIso": "2026-09-25",
+        "tag": "Événement",
+        "title": "ATC PROJECTS à Tangier Logistics Days 2026",
+        "lead": "ATC PROJECTS était présente à la 8ᵉ édition de Tangier Logistics Days (TLD), organisée par Tanger Med au Tanger Med Port Center.",
+        "body": [
+          "Le vendredi 25 septembre 2026, ATC PROJECTS a participé à Tangier Logistics Days (TLD) 2026, la 8ᵉ édition de cet événement organisé par Tanger Med au Tanger Med Port Center.",
+          "Thème de l’édition : « Supply Chain augmentée : l’Homme et la data, ressources rares et stratégiques ». Une journée destinée aux professionnels du transport, de la logistique et de la supply chain.",
+          "Au programme : accueil et networking (09h00–09h45), mots de bienvenue de Tanger Med (09h45–10h15), keynote « AI Transformation – Supply Chain of the Future » (10h15–11h00), tables rondes sur l’IA, la data, les compétences et le rôle des managers Supply Chain, puis cocktail déjeunatoire (15h00–16h00)."
+        ],
+        "images": [
+          {
+            "image": "assets/images/actualites/tld-2026-keynote.jpg",
+            "alt": "Keynote AI Transformation — Tangier Logistics Days 2026"
+          },
+          {
+            "image": "assets/images/actualites/tld-2026-table-ronde.jpg",
+            "alt": "Table ronde Supply Chain managers — Tangier Logistics Days 2026"
+          }
+        ]
+      }
+    ]
+  },
   "contact": {
     "kicker": "Contact",
     "title": "Dites-nous votre besoin",

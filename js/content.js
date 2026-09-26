@@ -107,6 +107,9 @@
       if (Object.prototype.hasOwnProperty.call(navVisibility, href)) {
         a.hidden = !navVisibility[href];
       }
+      if (href === "/actualites.html" || href === "actualites.html") {
+        a.hidden = data.news?.visible === false;
+      }
     });
   };
 
@@ -126,6 +129,7 @@
       prestations,
       audience,
       proof,
+      news,
       contact,
     } = data;
 
@@ -320,6 +324,49 @@
         }
       }
       if (typeof window.refreshLogoMarquee === "function") window.refreshLogoMarquee();
+    }
+
+    if (news) {
+      setText("[data-field='news.kicker']", news.kicker);
+      setText("[data-field='news.title']", news.title);
+      setText("[data-field='news.lead']", news.lead);
+      const list = document.querySelector("[data-list='news.items']");
+      if (list && Array.isArray(news.items)) {
+        list.innerHTML = news.items
+          .map((item) => {
+            const images = Array.isArray(item.images)
+              ? item.images.filter((img) => img && (img.image || img.src))
+              : [];
+            const gallery = images.length
+              ? `<div class="news-card__gallery">${images
+                  .map(
+                    (img) =>
+                      `<figure class="news-card__figure"><img src="${escapeAttr(
+                        mediaUrl(img.image || img.src)
+                      )}" alt="${escapeAttr(img.alt || item.title || "")}" width="1024" height="768" loading="lazy" /></figure>`
+                  )
+                  .join("")}</div>`
+              : "";
+            const body = Array.isArray(item.body)
+              ? item.body.map((p) => `<p>${escapeHtml(p)}</p>`).join("")
+              : item.body
+                ? `<p>${escapeHtml(item.body)}</p>`
+                : "";
+            const dateAttr = item.dateIso ? ` datetime="${escapeAttr(item.dateIso)}"` : "";
+            return `
+            <article class="news-card">
+              <header class="news-card__meta">
+                ${item.tag ? `<span class="news-card__tag">${escapeHtml(item.tag)}</span>` : ""}
+                ${item.date ? `<time${dateAttr}>${escapeHtml(item.date)}</time>` : ""}
+              </header>
+              <h2 class="news-card__title">${escapeHtml(item.title || "")}</h2>
+              ${item.lead ? `<p class="news-card__lead">${escapeHtml(item.lead)}</p>` : ""}
+              ${gallery}
+              <div class="news-card__body">${body}</div>
+            </article>`;
+          })
+          .join("");
+      }
     }
 
     if (contact) {

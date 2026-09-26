@@ -40,6 +40,7 @@
     { key: "prestations", label: "Méthode" },
     { key: "audience", label: "Pour qui" },
     { key: "proof", label: "Références" },
+    { key: "news", label: "Actualités" },
     { key: "contact", label: "Contact" },
   ];
 
@@ -60,6 +61,15 @@
     "prestations.phases": { tag: "Phase", title: "Titre", items: ["Point 1"] },
     "audience.items": { title: "Profil", text: "" },
     "proof.items": { name: "Client", alt: "", image: "" },
+    "news.items": {
+      date: "",
+      dateIso: "",
+      tag: "Événement",
+      title: "Titre",
+      lead: "",
+      body: [""],
+      images: [],
+    },
     "contact.paths": {
       label: "Sujet",
       href: "mailto:info.atcprojects@gmail.com?subject=Contact",
@@ -352,6 +362,21 @@
         ],
         "Aucun logo. Ajoutez-en pour activer le bandeau."
       )}`,
+    news: () => `
+      <div class="admins-block">
+        <h3>Actualités</h3>
+        ${visibilityToggle("news")}
+        <div class="admins-row">${field("Sur-titre", "news.kicker")}${field("Titre", "news.title")}</div>
+        ${field("Sous-texte", "news.lead", true)}
+      </div>
+      ${listEditor("Articles", "news.items", [
+        { key: "date", label: "Date affichée" },
+        { key: "dateIso", label: "Date ISO (AAAA-MM-JJ)" },
+        { key: "tag", label: "Tag" },
+        { key: "title", label: "Titre" },
+        { key: "lead", label: "Accroche", multiline: true },
+        { key: "body", label: "Paragraphes (un par ligne)", multiline: true },
+      ])}`,
     contact: () => `
       <div class="admins-block">
         <h3>Contact</h3>
@@ -391,7 +416,7 @@
 
       input.oninput = () => {
         const current = getByPath(content, path);
-        if (path === "contact.emails" || (/prestations\.phases\.\d+\.items$/.test(path))) {
+        if (path === "contact.emails" || (/prestations\.phases\.\d+\.items$/.test(path)) || (/news\.items\.\d+\.body$/.test(path))) {
           setByPath(
             content,
             path,
@@ -594,6 +619,7 @@
       "prestations",
       "audience",
       "proof",
+      "news",
       "contact",
     ].forEach((key) => {
       if (!content[key] || typeof content[key] !== "object") content[key] = {};
