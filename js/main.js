@@ -10,10 +10,6 @@
     window.initHeroVideo();
   }
 
-  if (document.body.classList.contains("page-news") && header) {
-    header.classList.add("is-scrolled");
-  }
-
   const setHeaderHeight = () => {
     if (!header) return;
     const h = Math.ceil(header.getBoundingClientRect().height);

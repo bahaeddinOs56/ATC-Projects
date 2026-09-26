@@ -330,21 +330,30 @@
       setText("[data-field='news.kicker']", news.kicker);
       setText("[data-field='news.title']", news.title);
       setText("[data-field='news.lead']", news.lead);
+      const items = Array.isArray(news.items) ? news.items : [];
+      const heroImg = document.querySelector("[data-news-hero]");
+      if (heroImg) {
+        const first = items[0]?.images?.find((img) => img && (img.image || img.src));
+        const src = news.heroImage || (first && (first.image || first.src));
+        if (src) heroImg.src = mediaUrl(src);
+      }
       const list = document.querySelector("[data-list='news.items']");
-      if (list && Array.isArray(news.items)) {
-        list.innerHTML = news.items
+      if (list) {
+        list.innerHTML = items
           .map((item) => {
             const images = Array.isArray(item.images)
               ? item.images.filter((img) => img && (img.image || img.src))
               : [];
             const gallery = images.length
-              ? `<div class="news-card__gallery">${images
-                  .map(
-                    (img) =>
-                      `<figure class="news-card__figure"><img src="${escapeAttr(
-                        mediaUrl(img.image || img.src)
-                      )}" alt="${escapeAttr(img.alt || item.title || "")}" width="1024" height="768" loading="lazy" /></figure>`
-                  )
+              ? `<div class="news-gallery news-gallery--${Math.min(images.length, 3)}">${images
+                  .map((img, i) => {
+                    const caption = img.caption || "";
+                    return `<figure class="news-gallery__item"><img src="${escapeAttr(
+                      mediaUrl(img.image || img.src)
+                    )}" alt="${escapeAttr(img.alt || item.title || "")}" width="1024" height="768" loading="${
+                      i === 0 ? "eager" : "lazy"
+                    }" />${caption ? `<figcaption>${escapeHtml(caption)}</figcaption>` : ""}</figure>`;
+                  })
                   .join("")}</div>`
               : "";
             const body = Array.isArray(item.body)
@@ -353,16 +362,56 @@
                 ? `<p>${escapeHtml(item.body)}</p>`
                 : "";
             const dateAttr = item.dateIso ? ` datetime="${escapeAttr(item.dateIso)}"` : "";
+            const facts = [
+              ["Date", item.date],
+              ["Lieu", item.place],
+              ["Organisateur", item.organizer],
+              ["Thème", item.theme],
+              ["Public", item.audience],
+            ].filter(([, v]) => v);
+            const factsHtml = facts.length
+              ? `<aside class="news-facts" aria-label="En bref"><p class="news-facts__title">En bref</p><dl>${facts
+                  .map(([k, v]) => `<div><dt>${escapeHtml(k)}</dt><dd>${escapeHtml(v)}</dd></div>`)
+                  .join("")}</dl></aside>`
+              : "";
+            const programme = Array.isArray(item.programme)
+              ? item.programme.filter(Boolean).map((row) => {
+                  const parts = String(row).split("|");
+                  return parts.length > 1
+                    ? { time: parts[0].trim(), label: parts.slice(1).join("|").trim() }
+                    : { time: "", label: String(row).trim() };
+                })
+              : [];
+            const programmeHtml = programme.length
+              ? `<div class="news-programme">
+                  <span class="kicker kicker--mist">Programme</span>
+                  <ol class="news-programme__list">${programme
+                    .map(
+                      (r, i) =>
+                        `<li><span class="news-programme__step">${String(i + 1).padStart(2, "0")}</span><span class="news-programme__time">${escapeHtml(
+                          r.time
+                        )}</span><span class="news-programme__label">${escapeHtml(r.label)}</span></li>`
+                    )
+                    .join("")}</ol>
+                </div>`
+              : "";
             return `
-            <article class="news-card">
-              <header class="news-card__meta">
-                ${item.tag ? `<span class="news-card__tag">${escapeHtml(item.tag)}</span>` : ""}
-                ${item.date ? `<time${dateAttr}>${escapeHtml(item.date)}</time>` : ""}
+            <article class="news-article">
+              <header class="news-article__head">
+                <div class="news-article__meta">
+                  ${item.tag ? `<span class="news-article__tag">${escapeHtml(item.tag)}</span>` : ""}
+                  ${item.date ? `<time${dateAttr}>${escapeHtml(item.date)}</time>` : ""}
+                  ${item.place ? `<span class="news-article__place">${escapeHtml(item.place)}</span>` : ""}
+                </div>
+                <h2 class="news-article__title">${escapeHtml(item.title || "")}</h2>
+                ${item.lead ? `<p class="news-article__lead">${escapeHtml(item.lead)}</p>` : ""}
               </header>
-              <h2 class="news-card__title">${escapeHtml(item.title || "")}</h2>
-              ${item.lead ? `<p class="news-card__lead">${escapeHtml(item.lead)}</p>` : ""}
               ${gallery}
-              <div class="news-card__body">${body}</div>
+              <div class="news-article__grid${factsHtml ? "" : " news-article__grid--single"}">
+                <div class="news-article__body">${body}</div>
+                ${factsHtml}
+              </div>
+              ${programmeHtml}
             </article>`;
           })
           .join("");

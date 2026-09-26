@@ -68,6 +68,11 @@
       title: "Titre",
       lead: "",
       body: [""],
+      place: "",
+      organizer: "",
+      theme: "",
+      audience: "",
+      programme: [],
       images: [],
     },
     "contact.paths": {
@@ -376,6 +381,11 @@
         { key: "title", label: "Titre" },
         { key: "lead", label: "Accroche", multiline: true },
         { key: "body", label: "Paragraphes (un par ligne)", multiline: true },
+        { key: "place", label: "Lieu" },
+        { key: "organizer", label: "Organisateur" },
+        { key: "theme", label: "Thème" },
+        { key: "audience", label: "Public" },
+        { key: "programme", label: "Programme (une ligne par étape : 09h00 – 09h45 | Accueil)", multiline: true },
       ])}`,
     contact: () => `
       <div class="admins-block">
@@ -416,7 +426,7 @@
 
       input.oninput = () => {
         const current = getByPath(content, path);
-        if (path === "contact.emails" || (/prestations\.phases\.\d+\.items$/.test(path)) || (/news\.items\.\d+\.body$/.test(path))) {
+        if (path === "contact.emails" || (/prestations\.phases\.\d+\.items$/.test(path)) || (/news\.items\.\d+\.(body|programme)$/.test(path))) {
           setByPath(
             content,
             path,

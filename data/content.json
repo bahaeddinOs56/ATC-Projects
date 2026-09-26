@@ -200,21 +200,34 @@
         "lead": "ATC PROJECTS était présente à la 8ᵉ édition de Tangier Logistics Days (TLD), organisée par Tanger Med au Tanger Med Port Center.",
         "body": [
           "Le vendredi 25 septembre 2026, ATC PROJECTS a participé à Tangier Logistics Days (TLD) 2026, la 8ᵉ édition de cet événement organisé par Tanger Med au Tanger Med Port Center.",
-          "Thème de l’édition : « Supply Chain augmentée : l’Homme et la data, ressources rares et stratégiques ». Une journée destinée aux professionnels du transport, de la logistique et de la supply chain.",
-          "Au programme : accueil et networking (09h00–09h45), mots de bienvenue de Tanger Med (09h45–10h15), keynote « AI Transformation – Supply Chain of the Future » (10h15–11h00), tables rondes sur l’IA, la data, les compétences et le rôle des managers Supply Chain, puis cocktail déjeunatoire (15h00–16h00)."
+          "Placée sous le thème « Supply Chain augmentée : l’Homme et la data, ressources rares et stratégiques », la journée a réuni les professionnels du transport, de la logistique et de la supply chain autour de l’IA, de la data, des compétences et du rôle des managers Supply Chain de demain."
         ],
         "images": [
           {
             "image": "assets/images/actualites/tld-2026-keynote.jpg",
-            "alt": "Keynote AI Transformation — Tangier Logistics Days 2026"
+            "alt": "Keynote AI Transformation — Tangier Logistics Days 2026",
+            "caption": "Keynote « AI Transformation – Supply Chain of the Future »"
           },
           {
             "image": "assets/images/actualites/tld-2026-table-ronde.jpg",
-            "alt": "Table ronde Supply Chain managers — Tangier Logistics Days 2026"
+            "alt": "Table ronde Supply Chain managers — Tangier Logistics Days 2026",
+            "caption": "Table ronde « Les Supply Chain managers de demain »"
           }
+        ],
+        "place": "Tanger Med Port Center",
+        "organizer": "Tanger Med",
+        "theme": "Supply Chain augmentée : l’Homme et la data, ressources rares et stratégiques",
+        "audience": "Professionnels du transport, de la logistique et de la supply chain",
+        "programme": [
+          "09h00 – 09h45 | Accueil & networking",
+          "09h45 – 10h15 | Mots de bienvenue de Tanger Med",
+          "10h15 – 11h00 | Keynote « AI Transformation – Supply Chain of the Future »",
+          "11h00 – 15h00 | Tables rondes : IA, data, compétences et managers Supply Chain",
+          "15h00 – 16h00 | Cocktail déjeunatoire"
         ]
       }
-    ]
+    ],
+    "heroImage": "assets/images/actualites/tld-2026-table-ronde.jpg"
   },
   "contact": {
     "kicker": "Contact",
